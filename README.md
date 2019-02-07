@@ -5,8 +5,8 @@
 |mail|string|null: false|
 
 ### Association
-- has_many :groups,through: members
-- has_many :messages
+  has_many :groups,through: members
+  has_many :messages
   has_many :members
 
 
@@ -18,7 +18,7 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+  belongs_to :user
   belongs_to :group
 
 
@@ -30,8 +30,8 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+  belongs_to :group
+  belongs_to :user
 
 
 ##groupテーブル
@@ -41,6 +41,6 @@
 |name|string|null: false, unique:true|
 
 ### Association
-- has_many :users,through: members
-- has_many :members
+  has_many :users,through: members
+  has_many :members
   has_many :messages

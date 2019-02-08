@@ -1,0 +1,26 @@
+.confirmation チャットグループが作成されました
+.left-content
+  .user-box
+    %p UserName
+    = link_to(fa_icon("cog"),root_path)
+    = link_to(fa_icon("edit"),root_path)
+  .group-box
+    = render partial:'group-box'
+
+.right-content
+  .header-box
+    .header-box__left
+      .header-box__left__group-name sampleグループ
+      .header-box__left__members member:aaa,bbb
+    =link_to("Edit",'#',class:'header-box__right')
+  .message-box
+    = render partial:'message-box'
+  .footer
+    %form
+      %input-box
+        %input{type:'text',placeholder:'type a message'}
+        %label
+          = fa_icon("photo")
+          %input{type:'file'}
+      %input{type:'submit',class:'send-botton',value:'Send'}
+

@@ -1,8 +1,8 @@
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true,null: false, unique: true|
-|mail|string|null: false|
+|email|string|null: false|
 
 ### Association
   has_many :groups,through: members
@@ -23,7 +23,7 @@
   belongs_to :group
 
 
-## membersテーブル
+## memberテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -35,7 +35,7 @@
   belongs_to :user
 
 
-##groupテーブル
+## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|

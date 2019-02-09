@@ -1,8 +1,9 @@
-.confirmation チャットグループが作成されました
+-# .confirmation チャットグループが作成されました
 .left-content
   .user-box
-    %p UserName
-    = link_to(fa_icon("cog"),root_path)
+    %p
+      =current_user.name
+    = link_to(fa_icon("cog"),edit_user_path(current_user.id))
     = link_to(fa_icon("edit"),root_path)
   .group-box
     = render partial:'group-box'

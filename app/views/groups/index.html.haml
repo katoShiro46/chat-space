@@ -4,18 +4,18 @@
     %p
       =current_user.name
     = link_to(fa_icon("cog"),edit_user_path(current_user.id))
-    = link_to(fa_icon("edit"),root_path)
+    = link_to(fa_icon("edit"),new_group_path)
   .group-box
-    = render partial:'group-box'
+    = render partial:'shared/group-box'
 
 .right-content
   .header-box
     .header-box__left
       .header-box__left__group-name sampleグループ
       .header-box__left__members member:aaa,bbb
-    =link_to("Edit",'#',class:'header-box__right')
+    =link_to("Edit",edit_group_path(37),class:'header-box__right')
   .message-box
-    = render partial:'message-box'
+    = render partial:'shared/message-box'
   .footer
     %form
       %input-box

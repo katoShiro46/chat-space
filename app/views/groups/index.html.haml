@@ -8,20 +8,20 @@
   .group-box
     = render partial:'shared/group-box'
 
-.right-content
-  .header-box
-    .header-box__left
-      .header-box__left__group-name sampleグループ
-      .header-box__left__members member:aaa,bbb
-    =link_to("Edit",edit_group_path(37),class:'header-box__right')
-  .message-box
-    = render partial:'shared/message-box'
-  .footer
-    %form
-      %input-box
-        %input{type:'text',placeholder:'type a message'}
-        %label
-          = fa_icon("photo")
-          %input{type:'file'}
-      %input{type:'submit',class:'send-botton',value:'Send'}
-
+-if @group.present?
+  .right-content
+    .header-box
+      .header-box__left
+        .header-box__left__group-name sampleグループ
+        .header-box__left__members member:aaa,bbb
+      =link_to("Edit",edit_group_path(37),class:'header-box__right')
+    .message-box
+      = render partial:'shared/message-box'
+    -# .footer
+    -#   = form_for[@group,@message] do |f|
+    -#     %input-box
+    -#       = f.textfield :comment ,placeholder:'type a message'
+    -#       %label
+    -#         = fa_icon("photo")
+    -#         %input{type:'file'}
+    -#     = f.submit {type:'submit',class:'send-botton',value:'Send'}

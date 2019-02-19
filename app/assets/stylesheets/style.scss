@@ -93,7 +93,6 @@
       text-decoration: none;
     }
   }
-
   .message-area::-webkit-scrollbar{
     display:none;
   }
@@ -128,6 +127,12 @@
         font-size:14px;
         color:$font-color-darkgrey;
       }
+    }
+    .lower-message__image{
+      clear:both;
+      display:block;
+      padding-top:10px;
+      padding-bottom:40px;
     }
     .lower-message__image{
       clear:both;

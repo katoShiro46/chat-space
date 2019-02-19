@@ -12,7 +12,7 @@
     .header-box__left
       .header-box__left__group-name sampleグループ
       .header-box__left__members member:aaa,bbb
-    =link_to("Edit",edit_group_path(37),class:'header-box__right')
+    =link_to("Edit",edit_group_path(params[:group_id]),class:'header-box__right')
   .message-area
     = render partial:'shared/message-area'
   .footer

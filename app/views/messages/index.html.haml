@@ -14,14 +14,14 @@
       .header-box__left__group-name sampleグループ
       .header-box__left__members member:aaa,bbb
     =link_to("Edit",edit_group_path(37),class:'header-box__right')
-  .message-box
-    = render partial:'shared/message-box'
+  .message-area
+    = render partial:'shared/message-area'
   .footer
     .form
       = form_for [@group, @message] do |f|
         .input-box
           = f.text_field :comment ,placeholder:'type a message',class:'input'
-          .label
+          %label
             = f.file_field :image,class: 'input'
             = fa_icon("photo")
         = f.submit class:'send-botton',value:'Send'

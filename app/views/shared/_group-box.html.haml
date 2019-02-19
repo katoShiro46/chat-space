@@ -1,7 +1,8 @@
 -current_user.groups.each do |group|
   -# = link_to group_messages_path(group) do
 
-  = link_to edit_group_path(group) do
+  = link_to group_messages_path(group) do
     .group-box__name
       =group.name
-    .group-box__message メッセージはまだありません。
+    .group-box__message
+      =group.show_last_message

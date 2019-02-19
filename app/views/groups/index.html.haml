@@ -1,4 +1,3 @@
--# .confirmation チャットグループが作成されました
 .left-content
   .user-box
     %p
@@ -17,11 +16,3 @@
       =link_to("Edit",edit_group_path(37),class:'header-box__right')
     .message-box
       = render partial:'shared/message-box'
-    -# .footer
-    -#   = form_for[@group,@message] do |f|
-    -#     %input-box
-    -#       = f.textfield :comment ,placeholder:'type a message'
-    -#       %label
-    -#         = fa_icon("photo")
-    -#         %input{type:'file'}
-    -#     = f.submit {type:'submit',class:'send-botton',value:'Send'}

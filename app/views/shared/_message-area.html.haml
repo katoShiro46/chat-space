@@ -5,8 +5,7 @@
     .message-area__message-box__time
       = message.created_at.strftime("%Y/%m/%d %H:%M")
     .message-area__message-box__comment
-      - if message.comment.present?
-        = message.comment
+      = message.comment if message.comment.present?
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
 

@@ -10,7 +10,8 @@
 .right-content
   .header-box
     .header-box__left
-      .header-box__left__group-name sampleグループ
+      .header-box__left__group-name
+        =@group.name
       .header-box__left__members member:aaa,bbb
     =link_to("Edit",edit_group_path(params[:group_id]),class:'header-box__right')
   .message-area

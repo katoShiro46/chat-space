@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="message-area__message-box">
+    var html = `<div class="message-area__message-box" id=${message.id}">
                   <div class="message-area__message-box__name">${message.user_name}</div>
                   <div class="message-area__message-box__time">${message.created_at}</div>
                   <div class="message-area__message-box__comment">${message.comment}</div>
@@ -35,4 +35,27 @@ $(function(){
     });
     return false;
   })
+
+  var url = location.href;
+  if (url.match(/\/groups\/\d+\/messages/)){
+    setInterval(function(){
+      var message_id = $('.message-area__message-box').first().attr('id')
+      $.ajax({
+        type: 'GET',
+        url: url,
+        data:{id:message_id},
+        dataType: 'json'
+      })
+      .done(function(messages){
+        messages.forEach(function(message){
+          var html = buildHTML(message);
+          $('.message-area').prepend(html);
+        });
+      })
+      .fail(function(){
+        alert('error');
+      });
+    },5000)
+  };
 })
+

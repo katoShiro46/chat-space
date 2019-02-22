@@ -1,5 +1,5 @@
 -@messages.each do |message|
-  .message-area__message-box
+  .message-area__message-box{id:"#{message.id}"}
     .message-area__message-box__name
       = message.user.name
     .message-area__message-box__time

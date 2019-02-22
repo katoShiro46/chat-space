@@ -40,7 +40,6 @@ $(function(){
   if (url.match(/\/groups\/\d+\/messages/)){
     setInterval(function(){
       var message_id = $('.message-area__message-box').first().attr('id')
-      console.log(message_id)
       $.ajax({
         type: 'GET',
         url: url,
@@ -48,11 +47,9 @@ $(function(){
         dataType: 'json'
       })
       .done(function(messages){
-        console.log(messages)
         messages.forEach(function(message){
           var html = buildHTML(message);
           $('.message-area').prepend(html);
-          console.log('1')
         });
       })
       .fail(function(){
